@@ -9,11 +9,11 @@ class Filter extends primes.erathostenes.Filter {
 // costruttori
 	Filter(Item tail, BigInteger p) {
 		super(tail,p) ;
-		this.column = new Matrix( tail.column(), setzerocolumn(tail.column()), BigInteger.ONE);
+		this.column = new Matrix(tail.column(), this.setzerocolumn(tail.column()), BigInteger.ONE);
 	}
 
-	Item setzerocolumn(Matrix r) {
-		if (r.nextrow != null)
+	Item setzerocolumn(Item r) {
+		if (r.column() != null)
 			return (new Matrix(r.column(),setzerocolumn(r.column()),BigInteger.ZERO));
 		else
 			return null ;
