@@ -35,7 +35,7 @@ int length() {
 		return i;
 	}
 	
-	public	Item next() {
+public	Item next() {
 		return next ;
 	}
 	

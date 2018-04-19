@@ -34,7 +34,7 @@ class Filter extends primes.erathostenes.Filter {
 			
 		}
 					
-		this.column = new Matrix( this.next.column(), this.column(), exp ) ;
+		this.column = new Matrix( this.next().column(), this.column(), exp ) ;
 		
 		
 		
