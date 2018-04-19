@@ -36,29 +36,33 @@ class Matrix extends Item {
 	}
 	// getters
 	
-    /* Implementazione del Metodo get ereditato
-       calcolo del rango della matrice (da fare)
-       @return restituisce l'intero nel token
-     */
+/** Implementazione del Metodo get ereditato
+	calcolo del rango della matrice (da fare)
+	@return restituisce l'intero nel token
+ */
 public    Token get() {
 	return null ;
 }
 
-    /* implementazione del metodo value() ereditato
-     @return restituisce il BigInteger dell'elemento della matrice
-     */
-
+/** implementazione del metodo value() ereditato
+	@return restituisce il BigInteger dell'elemento della matrice
+*/
 public    BigInteger value() {
 	return this.entry;
      } 
+
 
 public void print() {
 	System.out.println("M:"+this.entry) ;
 }
 
+/**
+ * This method gives back the reference to the next element
+ * in the same column of the Matrix
+ * @return the reference to the Item linked by nextrow attribute.
+ */
 public Item column () {
-		
-		return this.nextrow ;
+	return this.nextrow ;
 	}
 
 
