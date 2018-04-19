@@ -1,26 +1,62 @@
 package primes.quadratic ;
 
 import java.math.BigInteger ;
-import primes.erathostenes.Item ;
 
-class Filter extends primes.goldbach.Filter {
+class Filter extends primes.erathostenes.Filter {
 	Matrix column ;
 	
 	
 // costruttori
 	Filter(Item tail, BigInteger p) {
 		super(tail,p) ;
-		this.setzerocolumn(tail.next,tail.next.nextrow);
-    }
+		this.column = new Matrix( tail.column(), setzerocolumn(tail.column()), BigInteger.ONE);
+	}
 
-	Matrix setzerocolumn(Matrix r, Matrix c) {
-	
+	Item setzerocolumn(Matrix r) {
+		if (r.nextrow != null)
+			return (new Matrix(r.column(),setzerocolumn(r.column()),BigInteger.ZERO));
+		else
+			return null ;
 		
-		if (tail.nextrow != null) {
-			this.nextrow = new Matrix(setzerocolumn(c.nextrow,c.next)
+	
+	}
+
+	Token factorize(Token tok) {
+		
+		BigInteger exp = BigInteger.ZERO ;
+		
+		while(test(tok)) {
+			exp = exp.add(BigInteger.ONE);
+			tok.Set(tok.value().divide(this.value()));
+			tok.SetPrimality(false) ;
+					
+			
 			
 		}
+					
+		this.column = new Matrix( this.next.column(), this.column(), exp ) ;
 		
+		
+		
+		
+	}
+	
+
+/**
+ 
+ */
+public Token get() {
+		Token token;
+		token=next.get() ;
+		token = factorize(token);
+		return token;
+		
+	}
+	
+	
+public	Item column () {
+		
+		return this.column ;
 	}
 
 }
