@@ -1,4 +1,4 @@
-/*
+/**
  * This new variant of the Token class has to manage
  * residuals of the factoring integer
  * @author MP
