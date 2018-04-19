@@ -17,7 +17,7 @@ private void Set(Item tail, BigInteger p) {
     }
 
     // getters
-void print() {
+public void print() {
 		
 		System.out.print("F:"+this.prime+"->");
 		//if (!(this.next==null))

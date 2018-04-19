@@ -11,7 +11,7 @@ Item() {
 		this.set(null) ;
     }   
 
-Item(Item tail) {
+public Item(Item tail) {
 		this.set(tail) ;
     }   
 
@@ -46,7 +46,7 @@ int rlength() {
 			return (next.rlength()+1);
 	}
 
-abstract void print() ;
+abstract public void print() ;
 	
 abstract public Token get() ;
 	

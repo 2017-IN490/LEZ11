@@ -52,7 +52,7 @@ public    BigInteger value() {
      } 
 
 
-void print() {
+public void print() {
 	System.out.println("M:"+this.entry) ;
 }
 
