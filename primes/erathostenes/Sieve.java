@@ -84,7 +84,7 @@ public Sieve(String[] args) {
 		this.print() ;
 	}
 	
-	void print() {
+	public void print() {
 		
 		System.out.print("S:"+this.euler+"->");
 		//if (!(this.next==null))

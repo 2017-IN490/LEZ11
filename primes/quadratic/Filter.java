@@ -29,7 +29,8 @@ Token factorize(Token tok) {
 			tok.SetPrimality(false) ;
 		}
 					
-		this.column = new Matrix( this.next().column(), this.column(), exp ) ;
+		this.column = new Matrix( ((Item) this.next()).column(), this.column(), exp ) ;
+	return tok;
 	}
 	
 
@@ -38,7 +39,7 @@ Token factorize(Token tok) {
  */
 public Token get() {
 		Token token;
-		token=this.next().get() ;
+		token=(Token)this.next().get() ;
 		token = factorize(token);
 		return token;
 		

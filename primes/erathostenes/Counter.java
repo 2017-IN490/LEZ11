@@ -29,7 +29,7 @@ public	void set() {
 
     // getters
 	
-void print() {
+public void print() {
 		System.out.println("C:"+this.count);
 	}
 	
