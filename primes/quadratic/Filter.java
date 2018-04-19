@@ -7,21 +7,19 @@ class Filter extends primes.erathostenes.Filter {
 	
 	
 // costruttori
-	Filter(Item tail, BigInteger p) {
+Filter(Item tail, BigInteger p) {
 		super(tail,p) ;
 		this.column = new Matrix(tail.column(), this.setzerocolumn(tail.column()), BigInteger.ONE);
 	}
 
-	Item setzerocolumn(Item r) {
+Item setzerocolumn(Item r) {
 		if (r.column() != null)
-			return (new Matrix(r.column(),setzerocolumn(r.column()),BigInteger.ZERO));
+			return (new Matrix(r.column(),this.setzerocolumn(r.column()),BigInteger.ZERO));
 		else
 			return null ;
-		
-	
 	}
 
-	Token factorize(Token tok) {
+Token factorize(Token tok) {
 		
 		BigInteger exp = BigInteger.ZERO ;
 		
@@ -29,16 +27,9 @@ class Filter extends primes.erathostenes.Filter {
 			exp = exp.add(BigInteger.ONE);
 			tok.Set(tok.value().divide(this.value()));
 			tok.SetPrimality(false) ;
-					
-			
-			
 		}
 					
 		this.column = new Matrix( this.next().column(), this.column(), exp ) ;
-		
-		
-		
-		
 	}
 	
 
@@ -47,7 +38,7 @@ class Filter extends primes.erathostenes.Filter {
  */
 public Token get() {
 		Token token;
-		token=next.get() ;
+		token=this.next().get() ;
 		token = factorize(token);
 		return token;
 		
