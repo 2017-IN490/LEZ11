@@ -3,6 +3,16 @@ import java.math.BigInteger;
 public class Sieve extends primes.erathostenes.Sieve {
 	
 /**
+ * In the extension of a class constructors arenot inherited
+ */
+public	Sieve (String[] args) {
+		super(args) ;
+		
+	}
+	
+	
+	
+/**
  * @override of the erathosenes.Sieve mainloop
  * the only difference is on the test of
  * the primality boolean in order to create a new Filter objet
@@ -21,5 +31,12 @@ public class Sieve extends primes.erathostenes.Sieve {
 		};
 		
 	}
+	
+	public void printmatrix() {
+		
+		this.next().column().print() ;
+		
+	}
+
 
 }
