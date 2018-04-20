@@ -34,7 +34,7 @@ public	Sieve (String[] args) {
 	
 	public void printmatrix() {
 		
-		this.next().column().print() ;
+		((Filter)this.next()).column().print() ;
 		
 	}
 
