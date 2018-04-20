@@ -1,19 +1,25 @@
 package primes.quadratic ;
-
-public abstract class Item extends primes.erathostenes.Item {
+import java.math.BigInteger;
+public class Sieve extends primes.erathostenes.Sieve {
 	
-	Item(Item tail) {
+/**
+ * @override of the erathosenes.Sieve mainloop
+ * the only difference is on the test of
+ * the primality boolean in order to create a new Filter objet
+ */
+	private void mainloop() {
+		Token token ;
 		
-		super(tail);
+		token = (Token) this.next().get() ;
+		
+		while (testloop(token)) {
+			if (token.primality()) {
+				this.seteuler() ;
+				this.set( new Filter((Item)this.next() , token.value() ));
+			}
+			token = (Token)this.next().get() ;
+		};
 		
 	}
-	
-abstract public Item  column() ;
-	
-public	Item next() {
-		return (Item) super.next();
-		
-	}
-	
 
 }

@@ -47,7 +47,7 @@ public Sieve(String[] args) {
 		this.print() ;
 	}
 	
-	boolean testloop(Token token) {
+public	boolean testloop(Token token) {
 		return ( token.value().compareTo(this.maxprime) != 1) ;
 	}
 	
@@ -72,6 +72,7 @@ public Sieve(String[] args) {
 	public void seteuler() {
 		this.euler = this.euler.add(BigInteger.ONE) ;
 	}
+	
 	// getters
 	
 	public BigInteger getmax() {
